@@ -1,10 +1,20 @@
 const express = require('express')
 const dotenv = require('dotenv')
 const cors = require('cors')
+const morgan  = require('morgan')
+const connectDB = require('./config/db')
+
+
 
 const app = express()
 dotenv.config()
 app.use(express.json());
+connectDB()
+
+
+if (process.env.NODE_ENV === "Development") {
+  app.use(morgan("dev"));
+}
 
 const options = {
     origin: 'http://localhost:3010',
