@@ -9,19 +9,19 @@ app.use(express.json());
 const options = {
     origin: 'http://localhost:3010',
     useSuccessStatus: 200
-}      
+}
 app.use(cors(options))
 
 
-app.get('/', (req, res)=>{
-    res.send(`welcome from ${process.env.APPNAME} server` )
+app.get('/', (req, res) => {
+    res.send(`welcome from ${process.env.APPNAME} server`)
 
 })
 
 
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8800
 
-app.listen(PORT, ()=>{
-    console.log(`server is running at the port ${PORT}`);
-    
+app.listen(PORT, () => {
+    console.log(`server is running at the port ${PORT} please opnen postman and go to http://localhost:${PORT}`);
+
 })
