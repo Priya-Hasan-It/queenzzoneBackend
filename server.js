@@ -1,8 +1,11 @@
-const express = require('express')
-const dotenv = require('dotenv')
-const cors = require('cors')
-const morgan  = require('morgan')
-const connectDB = require('./config/db')
+import express from "express"
+import dotenv from "dotenv"
+import cors from  'cors'
+import morgan from "morgan"
+import connectDB from './config/db.js'
+import userRoutes from './rought/userRoutes.js'
+
+
 
 
 
@@ -27,6 +30,9 @@ app.get('/', (req, res) => {
     res.send(`welcome from ${process.env.APPNAME} server`)
 
 })
+
+app.use("/api/users", userRoutes);
+
 
 
 const PORT = process.env.PORT || 8800

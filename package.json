@@ -5,6 +5,7 @@
   "repository": "https://github.com/Priya-Hasan-It/queenzzoneBackend",
   "author": "Majedul Hasan",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "node server",
     "server": "nodemon server"
